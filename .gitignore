@@ -1,0 +1,54 @@
+# ============================================================
+# MarkerClipManager — file da non pubblicare
+# ============================================================
+
+# --- PACCHETTI GENERATI: vanno nelle Release, non nel repository ---
+# Sono file da ~100 KB con l'archivio codificato dentro: cambiano a ogni
+# versione e gonfierebbero la cronologia per sempre.
+# ATTENZIONE: i pattern sono volutamente specifici. Un generico "*.command" o
+# "*.cmd" escluderebbe anche MarkerClipManager_Setup.command e
+# MarkerClipManager_Setup_Windows.cmd, che invece DEVONO stare nel repository
+# (sono parte di quello che si installa, non pacchetti generati).
+*_Install_macOS.command
+*_Install_Windows.cmd
+*.tar.gz
+*.zip
+
+# --- PREFERENZE E STATO DELL'UTENTE ---
+# Nota: su questo progetto non vivono nella cartella dello script (stanno in
+# ~/Library/Application Support/RepertoireDB/), quindi non rischiano di finire
+# qui. Le regole restano come rete di sicurezza se un giorno si spostassero.
+marker_clip_manager_settings.json
+marker_clip_manager.lock
+
+# --- FILE DI SISTEMA ---
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+desktop.ini
+
+# --- PYTHON ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# --- LOG ---
+*.log
+repertoire_db.log
+
+# --- EDITOR ---
+.vscode/
+.idea/
+*.swp
+*~
+
+# --- VECCHIE VERSIONI ---
+# L'archivio delle versioni resta in locale: su GitHub la cronologia la fa git.
+old/
+OLDV/
+ARCHIVE/

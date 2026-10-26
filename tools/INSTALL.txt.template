@@ -1,0 +1,309 @@
+===============================================================================
+  MarkerClipManager __VERSION__ — Installation Guide / Guida all'installazione
+  Tommaso Feraboli — Film Editor
+===============================================================================
+
+  English ......... see below
+  Italiano ........ scroll down to "ITALIANO"
+
+
+===============================================================================
+  ENGLISH
+===============================================================================
+
+-------------------------------------------------------------------------------
+BEFORE YOU START
+-------------------------------------------------------------------------------
+
+You need:
+
+  * DaVinci Resolve, already installed and working
+  * Python 3 on your computer
+      macOS:   https://www.python.org/downloads/  (or: brew install python3)
+      Windows: https://www.python.org/downloads/
+               IMPORTANT: tick "Add Python to PATH" during setup
+  * An internet connection, for the first installation only
+  * About 5-10 minutes
+
+Close DaVinci Resolve before installing. Reopen it when you are done.
+
+
+-------------------------------------------------------------------------------
+macOS
+-------------------------------------------------------------------------------
+
+File to use:  MarkerClipManager___VERSION___Install_macOS.command
+
+  1. RIGHT-CLICK the file, then choose "Open".
+     Do NOT double-click it.
+
+     Why: the installer is not signed with an Apple developer certificate,
+     so a normal double-click is blocked with a message about an
+     "unidentified developer". Right-click > Open gives you a dialog with
+     an "Open" button, which a double-click does not.
+
+  2. In the dialog that appears, click "Open".
+     A Terminal window opens and shows the progress.
+
+  3. Wait. The installer does two things:
+       [1/2] copies the script files
+       [2/2] prepares the Python environment (downloads PySide6)
+
+     Step 2 downloads roughly 150 MB and can take a few minutes.
+     It is normal for the window to look still while this happens.
+
+  4. When you read "Installazione completata", press ENTER to close.
+
+Where it installs:
+
+  Script files:
+    ~/Library/Application Support/Blackmagic Design/DaVinci Resolve/
+      Fusion/Scripts/Comp/MarkerClipManager/
+
+  Python environment (separate, does not touch your system Python):
+    ~/.venvs/resolve_pyside6/
+
+
+-------------------------------------------------------------------------------
+WINDOWS
+-------------------------------------------------------------------------------
+
+File to use:  MarkerClipManager___VERSION___Install_Windows.cmd
+
+  1. DOUBLE-CLICK the file.
+
+     If Windows SmartScreen shows a blue warning window
+     ("Windows protected your PC"), click "More info", then "Run anyway".
+     This happens because the installer is not signed.
+
+  2. A command window opens and shows the progress:
+       [1/2] copies the script files
+       [2/2] installs PySide6 (downloads roughly 150 MB)
+
+  3. When you read "Installazione completata", press a key to close.
+
+Where it installs:
+
+  Script files, in whichever of these two folders already exists on your PC:
+    %APPDATA%\Blackmagic Design\DaVinci Resolve\Support\Fusion\Scripts\Comp\MarkerClipManager\
+    %APPDATA%\Blackmagic Design\DaVinci Resolve\Fusion\Scripts\Comp\MarkerClipManager\
+
+  PySide6 is installed for your user account only, in the Python that
+  Windows finds first. It does not require administrator rights.
+
+
+-------------------------------------------------------------------------------
+AFTER INSTALLATION
+-------------------------------------------------------------------------------
+
+Open DaVinci Resolve, open a project with a timeline, then:
+
+    Workspace  >  Scripts  >  Comp  >  MarkerClipManager
+
+The interface opens in its own window. It starts in your system language if
+one of the 12 translations matches, otherwise in English. You can change the
+language from the menu in the header (it takes effect after a restart).
+
+
+-------------------------------------------------------------------------------
+IF SOMETHING GOES WRONG
+-------------------------------------------------------------------------------
+
+"The installer said Python was not found"
+    The script files ARE installed, only the Python part is missing.
+    Install Python 3 (see BEFORE YOU START), then run the installer again.
+
+"The installer said PySide6 could not be installed"
+    Usually no internet connection. The script files ARE installed.
+    Once you are online, open the installed folder and run:
+      macOS:    MarkerClipManager_Setup.command
+      Windows:  MarkerClipManager_Setup_Windows.cmd
+    These only redo the Python part, they do not reinstall everything.
+
+"MarkerClipManager does not appear in the Scripts menu"
+    Resolve reads that folder when it starts: quit Resolve completely and
+    reopen it. On Windows, if it still does not appear, the files may have
+    gone to the other of the two folders listed above — move the
+    MarkerClipManager folder to the one Resolve actually uses.
+
+"It appears in the menu but nothing opens, or an error mentions PySide6"
+    On Windows this usually means you have more than one Python installed,
+    and PySide6 ended up in a different one from the one Resolve uses.
+    Run MarkerClipManager_Setup_Windows.cmd from the installed folder; if it
+    still fails, install PySide6 into the Python that Resolve uses.
+
+    Note: on Windows the script cannot fall back to a dedicated Python
+    environment the way it does on macOS. PySide6 must be available in the
+    Python that Resolve itself runs.
+
+
+-------------------------------------------------------------------------------
+UPDATING AND UNINSTALLING
+-------------------------------------------------------------------------------
+
+To update: run the new installer. It overwrites the script files and leaves
+your settings alone (see below). No need to remove the old version first.
+
+Not touched by an installation or an update:
+    ~/Library/Application Support/RepertoireDB/     (macOS)
+    %USERPROFILE%\Library\Application Support\RepertoireDB\   (Windows)
+  This is where your language preference lives.
+
+To uninstall: delete the MarkerClipManager folder from the Scripts location,
+and — on macOS, if you use it for nothing else — the folder
+~/.venvs/resolve_pyside6/
+
+
+===============================================================================
+  ITALIANO
+===============================================================================
+
+-------------------------------------------------------------------------------
+PRIMA DI INIZIARE
+-------------------------------------------------------------------------------
+
+Ti servono:
+
+  * DaVinci Resolve, già installato e funzionante
+  * Python 3 sul computer
+      macOS:   https://www.python.org/downloads/  (oppure: brew install python3)
+      Windows: https://www.python.org/downloads/
+               IMPORTANTE: spunta "Add Python to PATH" durante l'installazione
+  * Una connessione a internet, solo per la prima installazione
+  * Circa 5-10 minuti
+
+Chiudi DaVinci Resolve prima di installare. Riaprilo quando hai finito.
+
+
+-------------------------------------------------------------------------------
+macOS
+-------------------------------------------------------------------------------
+
+File da usare:  MarkerClipManager___VERSION___Install_macOS.command
+
+  1. CLIC DESTRO sul file, poi "Apri".
+     NON fare doppio clic.
+
+     Perché: l'installer non è firmato con un certificato Apple, quindi il
+     doppio clic viene bloccato con un messaggio su uno "sviluppatore non
+     identificato". Il clic destro > Apri fa comparire una finestra con il
+     pulsante "Apri", che con il doppio clic non appare.
+
+  2. Nella finestra che compare, clicca "Apri".
+     Si apre il Terminale e mostra l'avanzamento.
+
+  3. Aspetta. L'installer fa due cose:
+       [1/2] copia i file dello script
+       [2/2] prepara l'ambiente Python (scarica PySide6)
+
+     Il passaggio 2 scarica circa 150 MB e può richiedere qualche minuto.
+     È normale che la finestra sembri ferma durante il download.
+
+  4. Quando leggi "Installazione completata", premi INVIO per chiudere.
+
+Dove installa:
+
+  File dello script:
+    ~/Library/Application Support/Blackmagic Design/DaVinci Resolve/
+      Fusion/Scripts/Comp/MarkerClipManager/
+
+  Ambiente Python (separato, non tocca il Python di sistema):
+    ~/.venvs/resolve_pyside6/
+
+
+-------------------------------------------------------------------------------
+WINDOWS
+-------------------------------------------------------------------------------
+
+File da usare:  MarkerClipManager___VERSION___Install_Windows.cmd
+
+  1. DOPPIO CLIC sul file.
+
+     Se Windows SmartScreen mostra una finestra blu di avviso
+     ("Windows ha protetto il PC"), clicca "Ulteriori informazioni" e poi
+     "Esegui comunque". Succede perché l'installer non è firmato.
+
+  2. Si apre una finestra dei comandi con l'avanzamento:
+       [1/2] copia dei file dello script
+       [2/2] installazione di PySide6 (scarica circa 150 MB)
+
+  3. Quando leggi "Installazione completata", premi un tasto per chiudere.
+
+Dove installa:
+
+  File dello script, in quella delle due cartelle che esiste già sul PC:
+    %APPDATA%\Blackmagic Design\DaVinci Resolve\Support\Fusion\Scripts\Comp\MarkerClipManager\
+    %APPDATA%\Blackmagic Design\DaVinci Resolve\Fusion\Scripts\Comp\MarkerClipManager\
+
+  PySide6 viene installato solo per il tuo utente, nel Python che Windows
+  trova per primo. Non servono i diritti di amministratore.
+
+
+-------------------------------------------------------------------------------
+DOPO L'INSTALLAZIONE
+-------------------------------------------------------------------------------
+
+Apri DaVinci Resolve, apri un progetto con una timeline, poi:
+
+    Workspace  >  Scripts  >  Comp  >  MarkerClipManager
+
+L'interfaccia si apre in una finestra sua. Parte nella lingua del sistema se
+è una delle 12 tradotte, altrimenti in inglese. Puoi cambiare lingua dal menu
+in alto nella finestra (ha effetto al riavvio dello script).
+
+
+-------------------------------------------------------------------------------
+SE QUALCOSA NON FUNZIONA
+-------------------------------------------------------------------------------
+
+"L'installer dice che Python non è stato trovato"
+    I file dello script SONO installati, manca solo la parte Python.
+    Installa Python 3 (vedi PRIMA DI INIZIARE) e rilancia l'installer.
+
+"L'installer dice che PySide6 non è stato installato"
+    Di solito manca la connessione. I file dello script SONO installati.
+    Quando sei online, apri nella cartella installata:
+      macOS:    MarkerClipManager_Setup.command
+      Windows:  MarkerClipManager_Setup_Windows.cmd
+    Rifanno solo la parte Python, non reinstallano tutto.
+
+"MarkerClipManager non compare nel menu Scripts"
+    Resolve legge quella cartella all'avvio: chiudi Resolve completamente e
+    riaprilo. Su Windows, se ancora non compare, i file potrebbero essere
+    finiti nell'altra delle due cartelle indicate sopra — sposta la cartella
+    MarkerClipManager in quella che Resolve usa davvero.
+
+"Compare nel menu ma non si apre nulla, o dà un errore su PySide6"
+    Su Windows di solito vuol dire che hai più di un Python installato e
+    PySide6 è finito in uno diverso da quello che usa Resolve.
+    Lancia MarkerClipManager_Setup_Windows.cmd dalla cartella installata; se
+    non basta, installa PySide6 nel Python che Resolve usa davvero.
+
+    Nota: su Windows lo script non può ripiegare su un ambiente Python
+    dedicato come fa su macOS. PySide6 deve essere disponibile nel Python
+    che Resolve stesso esegue.
+
+
+-------------------------------------------------------------------------------
+AGGIORNARE E DISINSTALLARE
+-------------------------------------------------------------------------------
+
+Per aggiornare: lancia il nuovo installer. Sovrascrive i file dello script e
+lascia stare le tue impostazioni (vedi sotto). Non serve togliere prima la
+versione vecchia.
+
+Non vengono toccati da un'installazione né da un aggiornamento:
+    ~/Library/Application Support/RepertoireDB/     (macOS)
+    %USERPROFILE%\Library\Application Support\RepertoireDB\   (Windows)
+  È dove sta la preferenza della lingua.
+
+Per disinstallare: cancella la cartella MarkerClipManager dalla posizione
+degli script e — su macOS, se non la usi per altro — la cartella
+~/.venvs/resolve_pyside6/
+
+
+===============================================================================
+  Bug:      __BUG_EMAIL__
+  Supporto: https://paypal.me/acoffeefortom
+  Licenza:  MIT
+===============================================================================
