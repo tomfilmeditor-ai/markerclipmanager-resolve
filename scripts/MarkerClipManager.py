@@ -435,7 +435,7 @@ HEADER_KEYS = [
 EDITABLE_COLS = (COL_NAME, COL_KEYWORD, COL_NOTE)
 CSV_FIELDS = ["track", "tc_in", "tc_out", "duration", "color", "name", "keyword", "note"]
 
-VERSION = "1.4.6"
+VERSION = "1.4.7"
 BUG_EMAIL = "tomfilmeditor.tools@gmail.com"
 COFFEE_URL = "https://paypal.me/acoffeefortom"
 

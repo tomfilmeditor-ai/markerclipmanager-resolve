@@ -7,6 +7,18 @@ voci dettagliate qui perché non tracciate al momento — vedi comunque gli
 snapshot in `CLAUDE_WORKS/MarkerClipManager/ARCHIVE/` (v1.0, v1.1, v1.2.13,
 v1.2.14) come riferimento.
 
+## [1.4.7] — 2026-10-27
+
+### Cambiato
+- **`LICENSE.md` ora contiene il testo MIT verbatim.** GitHub classificava la
+  licenza come "Other" invece di MIT: la causa non erano le sezioni in fondo al
+  file, ma un paragrafo esplicativo inserito **dentro** il corpo della licenza
+  ("This means: ..."), che porta il riconoscimento automatico sotto soglia.
+  La spiegazione in parole semplici non e' andata persa: e' nei README, sotto
+  i crediti. La nota sulle traduzioni automatiche e il link per le donazioni
+  erano gia' presenti nei 12 README tradotti, quindi toglierli dalla licenza
+  non toglie niente a chi scarica.
+
 ## [1.4.6] — 2026-10-26
 
 ### Cambiato

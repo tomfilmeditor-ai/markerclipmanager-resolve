@@ -1,7 +1,7 @@
 MarkerClipManager — Administrador de Marcadores de Línea de Tiempo y Clips para DaVinci Resolve
 ===============================================================================================
 Author: Tommaso Feraboli — Film Editor
-Version: 1.4.6
+Version: 1.4.7
 MIT License — see the script header
 
 QUÉ HACE

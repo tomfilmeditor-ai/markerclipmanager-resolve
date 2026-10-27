@@ -6,7 +6,7 @@ and the ones on individual clips, across all video and audio tracks, together.
 
 🇮🇹 [Leggi in italiano](README.it.md)
 
-![Version](https://img.shields.io/badge/version-1.4.6-blue)
+![Version](https://img.shields.io/badge/version-1.4.7-blue)
 ![Platform](https://img.shields.io/badge/platform-macOS%20%7C%20Windows-lightgrey)
 ![Resolve](https://img.shields.io/badge/DaVinci%20Resolve-19%20%7C%2020-orange)
 ![Interface](https://img.shields.io/badge/interface-12%20languages-brightgreen)
@@ -173,5 +173,8 @@ expect the conventions of a software project.
 
 **Tommaso Feraboli** — Film Editor
 Licensed under [MIT](LICENSE.md) · Copyright (c) 2024-2026
+
+In plain words: use it, change it, ship it in your own work — just keep the
+author's name and the licence notice in copies and derived versions.
 
 If it saves you time: [buy me a coffee](https://paypal.me/acoffeefortom) ☕

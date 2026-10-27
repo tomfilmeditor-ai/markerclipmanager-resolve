@@ -1,7 +1,7 @@
 MarkerClipManager — Trình quản lý Đánh dấu Dòng thời gian và Clip cho DaVinci Resolve
 =====================================================================================
 Author: Tommaso Feraboli — Film Editor
-Version: 1.4.6
+Version: 1.4.7
 MIT License — see the script header
 
 NÓ LÀM GÌ

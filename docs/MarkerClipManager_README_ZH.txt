@@ -1,7 +1,7 @@
 MarkerClipManager — DaVinci Resolve 时间线和剪辑标记管理器
 ==========================================================
 Author: Tommaso Feraboli — Film Editor
-Version: 1.4.6
+Version: 1.4.7
 MIT License — see the script header
 
 功能说明

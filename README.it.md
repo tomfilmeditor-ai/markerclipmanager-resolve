@@ -7,7 +7,7 @@ audio, insieme.
 
 🇬🇧 [Read in English](README.md)
 
-![Versione](https://img.shields.io/badge/versione-1.4.6-blue)
+![Versione](https://img.shields.io/badge/versione-1.4.7-blue)
 ![Sistema](https://img.shields.io/badge/sistema-macOS%20%7C%20Windows-lightgrey)
 ![Resolve](https://img.shields.io/badge/DaVinci%20Resolve-19%20%7C%2020-orange)
 ![Interfaccia](https://img.shields.io/badge/interfaccia-12%20lingue-brightgreen)
@@ -177,5 +177,9 @@ ma non aspettarti le convenzioni di un progetto software.
 
 **Tommaso Feraboli** — Film Editor
 Distribuito con licenza [MIT](LICENSE.md) · Copyright (c) 2024-2026
+
+In parole semplici: usalo, modificalo, mettilo nei tuoi lavori — basta che nelle
+copie e nelle versioni derivate restino il nome dell'autore e l'avviso di
+licenza.
 
 Se ti fa risparmiare tempo: [offrimi un caffè](https://paypal.me/acoffeefortom) ☕
