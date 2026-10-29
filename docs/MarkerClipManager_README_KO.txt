@@ -1,7 +1,7 @@
 MarkerClipManager — DaVinci Resolve용 타임라인 및 클립 마커 관리자
 ==================================================================
 Author: Tommaso Feraboli — Film Editor
-Version: 1.4.7
+Version: 1.4.8
 MIT License — see the script header
 
 수행할 작업

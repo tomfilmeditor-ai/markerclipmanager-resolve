@@ -6,7 +6,7 @@ and the ones on individual clips, across all video and audio tracks, together.
 
 🇮🇹 [Leggi in italiano](README.it.md)
 
-![Version](https://img.shields.io/badge/version-1.4.7-blue)
+![Version](https://img.shields.io/badge/version-1.4.8-blue)
 ![Platform](https://img.shields.io/badge/platform-macOS%20%7C%20Windows-lightgrey)
 ![Resolve](https://img.shields.io/badge/DaVinci%20Resolve-19%20%7C%2020-orange)
 ![Interface](https://img.shields.io/badge/interface-12%20languages-brightgreen)
@@ -81,9 +81,15 @@ TC in, TC out, duration, colour, name, keyword, note.
 Download the installer for your system from the
 [Releases page](../../releases), then:
 
-**macOS** — **right-click** the `.command` file and choose **Open**
-(not a double-click: the installer is not signed with an Apple certificate, and
-a double-click gets blocked with a message about an unidentified developer).
+**macOS** — download the `.command.zip`, **double-click it to unpack**, then
+**right-click** the `.command` file inside and choose **Open**.
+
+Two separate reasons for those two steps, and both bite:
+a file downloaded from the web loses its "can be run" permission, so macOS
+refuses it with *"you do not have appropriate access privileges"* — the zip
+preserves it. And the installer is not signed with an Apple certificate, so a
+double-click is blocked as an unidentified developer, while right-click → Open
+gives you a dialog with an **Open** button.
 
 **Windows** — double-click the `.cmd` file. If SmartScreen warns you, choose
 *More info* → *Run anyway*.

@@ -7,6 +7,33 @@ voci dettagliate qui perché non tracciate al momento — vedi comunque gli
 snapshot in `CLAUDE_WORKS/MarkerClipManager/ARCHIVE/` (v1.0, v1.1, v1.2.13,
 v1.2.14) come riferimento.
 
+## [1.4.8] — 2026-10-29
+
+### Corretto — l'installer macOS non partiva a chi lo scaricava
+- **Segnalato da un utente su macOS 26.6.2**: facendo clic destro > Apri
+  sull'installer, macOS rispondeva *"could not be executed because you do not
+  have appropriate access privileges"*.
+- **Causa**: un download HTTP non trasporta i permessi Unix. Il file lasciava
+  questo computer eseguibile (`-rwxr-xr-x`) e arrivava all'utente non
+  eseguibile (`-rw-r--r--`). **Succedeva a chiunque**, non a casi particolari:
+  tutti quelli che hanno scaricato la 1.4.6 o la 1.4.7 hanno trovato
+  l'installer bloccato.
+- **Perche' non era emerso nei test**: ogni prova era stata fatta lanciando
+  `bash installer.command`, che non ha bisogno del bit di esecuzione. Il
+  percorso vero dell'utente — scarica, doppio clic — non era mai stato
+  provato. Da qui in poi l'unico test che conta e' quello sul file scaricato,
+  avviato come lo avvia una persona.
+- **Soluzione**: l'installer macOS si distribuisce dentro uno **zip**, che i
+  permessi li conserva (stanno dentro l'archivio). Il generatore lo crea, poi
+  lo scompatta e **verifica che il bit sia sopravvissuto**, fermandosi se non
+  lo e'. Viene allegato alla Release solo lo zip, non anche lo `.command`
+  nudo: lasciarli entrambi vorrebbe dire che qualcuno sceglie quello rotto.
+- Windows non era colpito: i file `.cmd` si eseguono per estensione, senza
+  bit di esecuzione.
+- Istruzioni aggiornate di conseguenza in `INSTALL.txt` e nei due README:
+  ora i passaggi macOS sono due, scompattare **e poi** clic destro > Apri, con
+  spiegati i due motivi diversi per cui servono entrambi.
+
 ## [1.4.7] — 2026-10-27
 
 ### Cambiato

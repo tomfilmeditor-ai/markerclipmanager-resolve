@@ -32,9 +32,15 @@ Close DaVinci Resolve before installing. Reopen it when you are done.
 macOS
 -------------------------------------------------------------------------------
 
-File to use:  MarkerClipManager___VERSION___Install_macOS.command
+File to use:  MarkerClipManager___VERSION___Install_macOS.command.zip
 
-  1. RIGHT-CLICK the file, then choose "Open".
+  1. Double-click the .zip to unpack it. You get a file ending in .command.
+
+     Why a zip: a file downloaded from the web loses its "can be run"
+     permission, and macOS then refuses it with "you do not have appropriate
+     access privileges". Inside a zip the permission survives.
+
+  2. RIGHT-CLICK the .command file, then choose "Open".
      Do NOT double-click it.
 
      Why: the installer is not signed with an Apple developer certificate,
@@ -42,17 +48,17 @@ File to use:  MarkerClipManager___VERSION___Install_macOS.command
      "unidentified developer". Right-click > Open gives you a dialog with
      an "Open" button, which a double-click does not.
 
-  2. In the dialog that appears, click "Open".
+  3. In the dialog that appears, click "Open".
      A Terminal window opens and shows the progress.
 
-  3. Wait. The installer does two things:
+  4. Wait. The installer does two things:
        [1/2] copies the script files
        [2/2] prepares the Python environment (downloads PySide6)
 
      Step 2 downloads roughly 150 MB and can take a few minutes.
      It is normal for the window to look still while this happens.
 
-  4. When you read "Installazione completata", press ENTER to close.
+  5. When you read "Installazione completata", press ENTER to close.
 
 Where it installs:
 
@@ -179,9 +185,16 @@ Chiudi DaVinci Resolve prima di installare. Riaprilo quando hai finito.
 macOS
 -------------------------------------------------------------------------------
 
-File da usare:  MarkerClipManager___VERSION___Install_macOS.command
+File da usare:  MarkerClipManager___VERSION___Install_macOS.command.zip
 
-  1. CLIC DESTRO sul file, poi "Apri".
+  1. Doppio clic sullo .zip per scompattarlo. Ottieni un file che finisce
+     per .command.
+
+     Perché uno zip: un file scaricato dal web perde il permesso di "poter
+     essere eseguito", e allora macOS lo rifiuta dicendo che non hai i
+     privilegi di accesso necessari. Dentro uno zip quel permesso sopravvive.
+
+  2. CLIC DESTRO sul file .command, poi "Apri".
      NON fare doppio clic.
 
      Perché: l'installer non è firmato con un certificato Apple, quindi il
@@ -189,17 +202,17 @@ File da usare:  MarkerClipManager___VERSION___Install_macOS.command
      identificato". Il clic destro > Apri fa comparire una finestra con il
      pulsante "Apri", che con il doppio clic non appare.
 
-  2. Nella finestra che compare, clicca "Apri".
+  3. Nella finestra che compare, clicca "Apri".
      Si apre il Terminale e mostra l'avanzamento.
 
-  3. Aspetta. L'installer fa due cose:
+  4. Aspetta. L'installer fa due cose:
        [1/2] copia i file dello script
        [2/2] prepara l'ambiente Python (scarica PySide6)
 
      Il passaggio 2 scarica circa 150 MB e può richiedere qualche minuto.
      È normale che la finestra sembri ferma durante il download.
 
-  4. Quando leggi "Installazione completata", premi INVIO per chiudere.
+  5. Quando leggi "Installazione completata", premi INVIO per chiudere.
 
 Dove installa:
 

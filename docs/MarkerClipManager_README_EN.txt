@@ -1,7 +1,7 @@
 MarkerClipManager — Timeline & Clip Marker Manager for DaVinci Resolve
 ======================================================================
 Author: Tommaso Feraboli — Film Editor
-Version: 1.4.7
+Version: 1.4.8
 MIT License — see the script header
 
 WHAT IT DOES

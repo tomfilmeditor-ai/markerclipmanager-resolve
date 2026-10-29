@@ -331,9 +331,35 @@ else
 fi
 
 
+# ── Lo .command va distribuito dentro uno zip ───────────────────────────
+# Un download HTTP non trasporta i permessi Unix: il file arriva 644, senza
+# bit di esecuzione, e il doppio clic risponde "you do not have appropriate
+# access privileges". Succede a TUTTI, non a casi particolari — segnalato da
+# un utente su macOS 26.6.2 il 29 ottobre 2026.
+# Lo zip invece i permessi li conserva (stanno dentro l'archivio), quindi
+# scompattando si ritrova un file eseguibile. Windows non ha il problema: i
+# .cmd si eseguono per estensione, senza bit.
+# Si distribuisce SOLO lo zip, non anche lo .command nudo: lasciarli entrambi
+# significa che qualcuno sceglie quello rotto.
+MAC_ZIP="$OUT_DIR/MarkerClipManager_${VERSION}_Install_macOS.command.zip"
+rm -f "$MAC_ZIP"
+( cd "$OUT_DIR" && zip -q "$(basename "$MAC_ZIP")" "$(basename "$MAC_OUT")" )
+
+# verifica vera: si scompatta e si controlla che il bit sia sopravvissuto
+VERIFICA=$(mktemp -d)
+( cd "$VERIFICA" && unzip -q "$MAC_ZIP" )
+if [ -x "$VERIFICA/$(basename "$MAC_OUT")" ]; then
+    echo "Zip macOS: il bit di esecuzione sopravvive allo scompattamento — OK"
+else
+    echo "ERRORE: nello zip il file non risulta eseguibile. Non distribuirlo."
+    rm -rf "$VERIFICA"; exit 1
+fi
+rm -rf "$VERIFICA"
+
 echo ""
 echo "Generati:"
-ls -lh "$MAC_OUT" "$WIN_OUT" "$INSTR" "$OUT_DIR/MarkerClipManager_${VERSION}.tar.gz" | awk '{print "  " $9 "  (" $5 ")"}'
+ls -lh "$MAC_ZIP" "$WIN_OUT" "$INSTR" "$OUT_DIR/MarkerClipManager_${VERSION}.tar.gz" | awk '{print "  " $9 "  (" $5 ")"}'
+echo "  (lo .command nudo resta qui in locale ma NON va allegato alla Release)"
 echo ""
 echo "Nota: il ramo Windows non e' mai stato provato su una macchina Windows"
 echo "      reale — testato solo il ramo macOS. Vedi STATO.md."

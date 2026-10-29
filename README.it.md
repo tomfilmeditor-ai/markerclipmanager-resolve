@@ -7,7 +7,7 @@ audio, insieme.
 
 🇬🇧 [Read in English](README.md)
 
-![Versione](https://img.shields.io/badge/versione-1.4.7-blue)
+![Versione](https://img.shields.io/badge/versione-1.4.8-blue)
 ![Sistema](https://img.shields.io/badge/sistema-macOS%20%7C%20Windows-lightgrey)
 ![Resolve](https://img.shields.io/badge/DaVinci%20Resolve-19%20%7C%2020-orange)
 ![Interfaccia](https://img.shields.io/badge/interfaccia-12%20lingue-brightgreen)
@@ -83,9 +83,16 @@ marcatore, traccia, TC inizio, TC fine, durata, colore, nome, parola chiave, not
 Scarica l'installer per il tuo sistema dalla
 [pagina Releases](../../releases), poi:
 
-**macOS** — **clic destro** sul file `.command` e scegli **Apri**
-(non doppio clic: l'installer non è firmato con un certificato Apple, e il
-doppio clic viene bloccato con un messaggio su uno sviluppatore non identificato).
+**macOS** — scarica il `.command.zip`, **doppio clic per scompattarlo**, poi
+**clic destro** sul file `.command` che ne esce e scegli **Apri**.
+
+I due passaggi servono per due motivi diversi, e sbagliarne uno basta a
+bloccarti: un file scaricato dal web perde il permesso di poter essere
+eseguito, e macOS lo rifiuta dicendo che *non hai i privilegi di accesso
+necessari* — lo zip quel permesso lo conserva. E l'installer non è firmato con
+un certificato Apple, quindi il doppio clic viene bloccato come sviluppatore
+non identificato, mentre il clic destro → Apri fa comparire il pulsante
+**Apri**.
 
 **Windows** — doppio clic sul file `.cmd`. Se SmartScreen avvisa, scegli
 *Ulteriori informazioni* → *Esegui comunque*.
